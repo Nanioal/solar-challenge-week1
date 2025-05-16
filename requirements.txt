@@ -1,0 +1,12 @@
+name: CI Workflow
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+    - name: Install Dependencies
+      run: pip install -r requirements.txt
+    - name: Show Python Version
+      run: python --version
